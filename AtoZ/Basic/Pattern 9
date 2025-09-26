@@ -1,0 +1,35 @@
+https://takeuforward.org/plus/dsa/beginner-problem/patterns/pattern-9
+
+class Solution {
+private: 
+//TC - O(2*N2)
+//SC - O(1)
+ void pattern7(int n) {
+        for(int i = 1; i <= n; i++){
+            for(int j = n; j > i; j--){
+                cout << " ";
+            }
+            for(int k = 1; k <= 2*i-1; k++){
+                cout << "*";
+            }
+            cout << endl;
+        }
+    }
+
+    void pattern8(int n) {
+        for(int i = n; i >= 1; i--){
+            for(int j = i; j < n; j++){
+                cout << " ";
+            }
+            for(int k = 1; k <= 2*i-1; k++){
+                cout << "*";
+            }
+            cout << endl;
+        }
+    }
+public:
+    void pattern9(int n) {
+        pattern7(n);
+        pattern8(n);
+    }
+};
