@@ -1,0 +1,24 @@
+https://takeuforward.org/plus/dsa/problems/counting-frequencies-of-array-elements
+
+class Solution {
+public:
+//TC - O(N)
+//SC - O(N)
+    vector<vector<int>> countFrequencies(vector<int>& nums) {
+        vector<vector<int>> ans;
+        int n = nums.size();
+
+        unordered_map<int,int> freq;
+        for(int i = 0; i < n; i++){
+            freq[nums[i]]++;
+        }
+
+        for(auto x : freq){
+            vector<int> temp;
+            temp.push_back(x.first);
+            temp.push_back(x.second);
+            ans.push_back(temp);
+        }
+        return ans;
+    }
+};

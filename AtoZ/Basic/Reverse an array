@@ -1,0 +1,20 @@
+https://takeuforward.org/plus/dsa/problems/reverse-an-array
+
+class Solution{
+public:
+//TC - O(N)
+//SC - O(N)
+    void reverse(int arr[], int n){
+        reverseHelper(arr, 0, n-1);
+    }
+
+    void reverseHelper(int arr[], int left, int right){
+        if(left > right){
+            return;
+        }
+        swap(arr[left], arr[right]);
+        left++;
+        right--;
+        reverseHelper(arr, left, right);
+    }
+};

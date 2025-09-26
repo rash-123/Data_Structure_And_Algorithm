@@ -1,0 +1,23 @@
+https://takeuforward.org/plus/dsa/problems/highest-occurring-element-in-an-array
+
+class Solution {
+public:
+    int mostFrequentElement(vector<int>& nums) {
+        int n = nums.size();
+        int ans = 0;
+        int max = 0;
+
+        map<int,int> freq;
+        for(int i = 0; i < n; i++){
+            freq[nums[i]]++;
+        }
+
+        for(auto x : freq){
+            if(x.second > max){
+                max = x.second;
+                ans = x.first;
+            }
+        }
+        return ans;
+    }
+};

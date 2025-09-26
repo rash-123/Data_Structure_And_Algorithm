@@ -1,0 +1,23 @@
+https://takeuforward.org/plus/dsa/problems/check-if-string-is-palindrome-or-not-
+
+class Solution{	
+	public:	
+//TC - O(N)
+//SC - O(N)
+        bool palindrome(string &s, int left, int right){
+            if(left >= right){
+                return true;
+            }
+            if(s[left] != s[right]){
+                return false;
+            }
+            return palindrome(s, left + 1, right - 1);
+        }	
+		bool palindromeCheck(string& s){
+			int n = s.size()-1;
+            int left = 0;
+            int right = n;
+
+            return palindrome(s, left, right);
+		}
+};

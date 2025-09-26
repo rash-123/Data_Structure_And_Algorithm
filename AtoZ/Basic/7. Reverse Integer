@@ -1,0 +1,20 @@
+https://leetcode.com/problems/reverse-integer/description/
+
+class Solution {
+public:
+    int reverse(int x) {
+        //INT_MIN and INT_MAX [-2pow(31), 2pow(31) - 1]
+        int reverseNo = 0;
+        while(x != 0){
+            if((reverseNo > INT_MAX/10) || (reverseNo < INT_MIN/10)){
+                return 0;
+            }
+            else{
+                int lastDigit = x % 10;
+                reverseNo = reverseNo * 10 + lastDigit;
+                x = x / 10;
+            }
+        }
+        return reverseNo;
+    }
+};

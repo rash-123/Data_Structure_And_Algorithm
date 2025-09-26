@@ -1,0 +1,21 @@
+https://leetcode.com/problems/palindrome-number/description/
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x < 0){
+            return false;
+        }
+        int originalNo = x;
+        long reverseNo = 0;
+        while(x > 0){
+            long lastDight = x % 10;
+            reverseNo = (reverseNo * 10) + lastDight;
+            x = x / 10;
+        }
+        if(originalNo == reverseNo){
+            return true;
+        }
+        return false;
+    }
+};
