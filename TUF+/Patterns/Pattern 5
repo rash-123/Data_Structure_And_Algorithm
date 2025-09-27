@@ -1,0 +1,15 @@
+https://takeuforward.org/plus/dsa/beginner-problem/patterns/pattern-5
+
+class Solution {
+public:
+//TC - O(N2)
+//SC - O(1)
+    void pattern5(int n) {
+        for(int i = 1; i <= n; i++){
+            for(int j = n; j >= i; j--){
+                cout << "*";
+            }
+            cout << endl;
+        }
+    }
+};
