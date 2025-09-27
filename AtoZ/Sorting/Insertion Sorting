@@ -1,0 +1,23 @@
+https://takeuforward.org/plus/dsa/problems/insertion-sorting
+
+class Solution {
+public:
+//TC - O(N2)
+//SC - O(1)
+    vector<int> insertionSort(vector<int>& nums) {
+        int n = nums.size();
+        int j = 0;
+
+        for(int i = 1; i < n; i++){
+            int current = nums[i];
+            j = i-1;
+            while(j >= 0 && nums[j] > current){
+                nums[j+1] = nums[j];
+                j--;
+            }
+            nums[j+1] = current;
+
+        }
+        return nums;
+    }
+};
