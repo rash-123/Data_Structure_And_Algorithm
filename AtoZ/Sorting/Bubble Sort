@@ -1,0 +1,19 @@
+https://takeuforward.org/plus/dsa/problems/bubble-sort
+
+class Solution {
+public:
+//TC - O(N2)
+//SC - O(1)
+    vector<int> bubbleSort(vector<int>& nums) {
+        int n = nums.size();
+
+        for(int i = 0; i < n; i++){
+            for(int j = i+1; j < n; j++){
+                if(nums[i] > nums[j]){
+                    swap(nums[i], nums[j]);
+                }
+            }
+        }
+        return nums;
+    }
+};
