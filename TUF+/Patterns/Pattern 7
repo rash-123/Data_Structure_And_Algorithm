@@ -1,0 +1,18 @@
+https://takeuforward.org/plus/dsa/beginner-problem/patterns/pattern-7
+
+class Solution {
+public:
+//TC - O(N2)
+//SC - O(1)
+    void pattern7(int n) {
+         for(int i = 1; i <= n; i++){
+            for(int j = n; j > i; j--){
+                cout << " ";
+            }
+            for(int k = 1; k <= 2*i-1; k++){
+                cout << "*";
+            }
+            cout << endl;
+        }
+    }
+};
