@@ -1,0 +1,22 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/palindrome-number
+
+class Solution {
+public:
+//TC - O(logN)
+//SC - O(1)
+    bool isPalindrome(int n) {
+        int reverseNo = 0;
+        int originalNo = n;
+        while(n > 0){
+            int lastDigit = n % 10;
+            reverseNo = reverseNo * 10 + lastDigit;
+            n = n / 10;
+        }
+        if(reverseNo == originalNo){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+};
