@@ -1,0 +1,17 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/factorial-of-a-given-number-i
+
+class Solution {
+public:
+//TC - O(N)
+//SC - O(1)
+    int factorial(int n) {
+        if(n == 0 || n == 1){
+            return 1;
+        }
+        int fact = 1;
+        for(int i = 1; i <= n; i++){
+            fact = fact * i;
+        }
+        return fact;
+    }
+};
