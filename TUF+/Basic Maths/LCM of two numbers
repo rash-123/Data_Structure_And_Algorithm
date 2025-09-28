@@ -1,0 +1,20 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/lcm-of-two-numbers
+
+class Solution {
+
+//Time Complexity = O(min(n1, n2))
+//Space Complexity = O(n)
+private:
+    int GCD(int n1,int n2) {
+        if(n2 == 0){
+            return n1;
+        }
+        int ans = GCD(n2, n1 % n2);
+        return ans;
+    }
+public:
+    int LCM(int n1,int n2) {
+        int ans = (n1 / GCD(n1, n2)) * n2;
+        return ans;
+    }
+};
