@@ -1,0 +1,20 @@
+https://takeuforward.org/plus/dsa/beginner-problem/patterns/pattern-21
+
+class Solution {
+public:
+//TC - O(N2)
+//SC - O(1)
+    void pattern21(int n) {
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n; j++){
+                if(i == 1 || j == 1 || i == n || j == n){
+                    cout << "*";
+                }
+                else{
+                    cout << " ";
+                }
+            }
+            cout << endl;
+        }
+    }
+};

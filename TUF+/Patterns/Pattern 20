@@ -1,0 +1,46 @@
+https://takeuforward.org/plus/dsa/beginner-problem/patterns/pattern-20
+
+class Solution {
+public:
+//TC - O(N2)
+//SC - O(1)
+void pattern12(int n) {
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= i; j++){
+                cout << "*";
+            }
+
+            for(int k = 1; k <= ((2*n)-(2*i)); k++){
+                cout << " ";
+            }
+
+            for(int j = i; j >= 1; j--){
+                cout << "*";
+            }
+            cout << endl;
+        }
+}
+
+void pattern11(int n) {
+        for(int i = n; i > 1; i--){
+            for(int j = 1; j < i; j++){
+                cout << "*";
+            }
+
+            for(int k = 1; k <= (((2*n)-(2*i))+2); k++){
+                cout << " ";
+            }
+
+            for(int j = i; j > 1; j--){
+                cout << "*";
+            }
+            cout << endl;
+        }
+}
+
+
+    void pattern20(int n) {
+        pattern12(n);
+        pattern11(n);
+    }
+};
