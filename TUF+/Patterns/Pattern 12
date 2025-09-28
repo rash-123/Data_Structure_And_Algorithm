@@ -1,0 +1,23 @@
+https://takeuforward.org/plus/dsa/beginner-problem/patterns/pattern-12
+
+class Solution {
+public:
+//TC - O(N2)
+//SC - O(1)
+    void pattern12(int n) {
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= i; j++){
+                cout << j;
+            }
+
+            for(int k = 1; k <= ((2*n)-(2*i)); k++){
+                cout << " ";
+            }
+
+            for(int j = i; j >= 1; j--){
+                cout << j;
+            }
+            cout << endl;
+        }
+    }
+};
