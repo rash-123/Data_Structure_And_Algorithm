@@ -1,0 +1,21 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/palindrome-number
+
+class Solution {
+public:
+//TC - O(logN)
+//SC - O(1)
+    int largestDigit(int n) {
+        int max = 0;
+        if(n == 0){
+            return 0;
+        }
+        while(n > 0){
+            int lastDigit = n % 10;
+            if(lastDigit > max){
+                max = lastDigit;
+            }
+            n = n / 10;
+        }
+        return max;
+    }
+};
