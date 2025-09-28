@@ -1,0 +1,19 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/reverse-a-number
+
+class Solution {
+public:
+//TC - O(logN)
+//SC - O(1)
+    int reverseNumber(int n) {
+        int reverseNo = 0;
+        if(n == 0){
+            return 0;
+        }
+        while(n > 0){
+            int lastDigit = n % 10;
+            reverseNo = reverseNo * 10 + lastDigit;
+            n = n / 10;
+        }
+        return reverseNo;
+    }
+};
