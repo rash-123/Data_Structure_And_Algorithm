@@ -1,0 +1,19 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/count-all-digits-of-a-number
+
+class Solution {
+public:
+//TC - O(logN)
+//SC - O(1)
+    int countDigit(int n) {
+        int count = 0;
+        if(n == 0){
+            return 1;
+        }
+        while(n>0){
+            int lastDigit = n%10;
+            count++;
+            n=n/10;
+        }
+        return count;
+    }
+};
