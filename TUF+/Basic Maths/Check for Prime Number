@@ -1,0 +1,18 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/check-for-prime-number
+
+class Solution {
+public:
+//TC - O(sqrt(N))
+//SC - O(1)
+    bool isPrime(int n) {
+        if(n == 0 || n == 1 ){
+            return false;
+        }
+        for(int i = 2; i * i <= n; i++){
+            if(n % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+};
