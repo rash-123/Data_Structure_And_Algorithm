@@ -1,0 +1,17 @@
+https://takeuforward.org/plus/dsa/beginner-problem/patterns/pattern-16
+
+class Solution {
+public:
+//TC - O(N2)
+//SC - O(1)
+    void pattern16(int n) {
+        char ch = 'A';
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= i; j++){
+                cout << ch;
+            }
+            ch++;
+            cout << endl;
+        }
+    }
+};
