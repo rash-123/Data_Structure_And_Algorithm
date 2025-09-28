@@ -1,0 +1,14 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-maths/gcd-of-two-numbers
+
+class Solution {
+public:
+//Time Complexity = O(min(n1, n2))
+//Space Complexity = O(n)
+    int GCD(int n1,int n2) {
+        if(n2 == 0){
+            return n1;
+        }
+        int ans = GCD(n2, n1 % n2);
+        return ans;
+    }
+};
