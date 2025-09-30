@@ -1,0 +1,41 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-hashing/second-highest-occurring-element
+
+class Solution {
+public:
+//Time Complexity = O(N)
+//Space Complexity = O(N)
+    int secondMostFrequentElement(vector<int>& nums) {
+        int n = nums.size();
+
+        if(n == 0){
+            return -1;
+        }
+
+        int maxi = 0;
+        for(int i = 0; i < n; i++){
+            maxi = max(nums[i], maxi);
+        }
+        
+        vector<int> hash(maxi+1, 0);
+        for(int i = 0; i < n; i++){
+            hash[nums[i]]++;
+        }
+
+        int first = -1, second = -1;
+        for(int i = 0; i <= maxi; i++){
+            if(hash[i] == 0){
+                continue;
+            }
+            if(hash[i] > hash[first]){
+                second = first;
+                first = i;
+            }
+            else if(hash[i] > hash[second] && hash[i] != hash[first]){
+                second = i;
+            }
+            //cout << first << " " << second << endl;
+        }
+        return second; 
+        
+    }
+};
