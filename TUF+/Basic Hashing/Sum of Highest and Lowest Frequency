@@ -1,0 +1,31 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-hashing/sum-of-highest-and-lowest-frequency
+
+class Solution {
+public:
+//Time Complexity - O(N)
+//Space Complexity - O(N)
+    int sumHighestAndLowestFrequency(vector<int>& nums) {
+        int n = nums.size();
+        int maxCount = 0;
+        int minCount = INT_MAX;
+        int ans = 0;
+        map<int,int> freq;
+        for(int i = 0; i < n; i++){
+            freq[nums[i]]++;
+        }
+        for(auto x: freq){
+            if(x.second > maxCount){
+                maxCount = x.second;
+            }
+        }
+
+        for(auto x: freq){
+            if(x.second < minCount){
+                minCount = x.second;
+            }
+        }
+
+        ans = maxCount + minCount;
+        return ans;
+    }
+};
