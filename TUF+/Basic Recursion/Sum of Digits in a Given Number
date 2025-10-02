@@ -1,0 +1,23 @@
+https : // takeuforward.org/plus/dsa/beginner-problem/basic-recursion/sum-of-digits-in-a-given-number
+
+        class Solution
+{
+public:
+    // TC - O(N)
+    // SC - O(N)
+    int addDigits(int num)
+    {
+        if (num < 10)
+        {
+            return num;
+        }
+        int sum = 0;
+        while (num > 0)
+        {
+            int lastDigit = num % 10;
+            sum += lastDigit;
+            num = num / 10;
+        }
+        return addDigits(sum);
+    }
+};
