@@ -1,0 +1,21 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-recursion/reverse-a-string-i
+
+class Solution{	
+public:		
+//TC - O(N)
+//SC - O(N)
+    void reverse(vector<char>&s, int left, int right){
+        if(left >= right){
+            return;
+        }
+        swap(s[left], s[right]);
+        reverse(s, left + 1, right - 1);
+    }
+	vector<char> reverseString(vector<char>& s){
+		int n = s.size();
+        int left = 0, right = n-1;
+        reverse(s, left, right);
+        return s;
+        
+	}
+};
