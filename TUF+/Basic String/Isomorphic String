@@ -1,0 +1,26 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-strings/isomorphic-string
+
+class Solution {
+public:
+//TC - O(N)
+//SC - O(N)
+    bool isomorphicString(string s, string t) {
+    	map<char,char> freq1;
+        map<char,char> freq2;
+
+        for(int i = 0; i < s.size(); i++){
+            // Condition checks:
+            // 1. If s[i] is already mapped to a different character in t
+            // 2. OR if t[i] is already mapped from a different character in s
+            if((freq1.find(s[i]) != freq1.end() && freq1[s[i]] != t[i]) || 
+                (freq2.find(t[i]) != freq2.end() && freq2[t[i]] != s[i])){
+                    return false;
+            }
+            else{
+                freq1[s[i]] = t[i];
+                freq2[t[i]] = s[i];
+            }
+        }
+        return true;
+    }
+};
