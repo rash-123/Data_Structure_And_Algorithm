@@ -1,0 +1,17 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-strings/rotate-string
+
+class Solution{	
+	public:
+    //TC - O(N)
+    //SC - O(N) - concatenated string s + s.
+		bool rotateString(string& s,string& goal){
+            if(s.length() != goal.length()){
+                return false;
+            }
+			string ans = s + s;
+			if(ans.find(goal) != string::npos){
+				return true;
+			}
+			return false;
+		}
+};
