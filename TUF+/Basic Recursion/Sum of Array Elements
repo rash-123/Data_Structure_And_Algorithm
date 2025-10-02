@@ -1,0 +1,17 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-recursion/sum-of-array-elements-ii
+
+class Solution{	
+	public:
+    //TC - O(N)
+    //SC - O(N)
+		int arraySum(vector<int>& nums){
+			return sum(nums,0);
+		}
+
+		int sum(vector<int>& nums, int left){
+			if(left >= nums.size()){
+				return 0;
+			}
+			return nums[left] + sum(nums, left + 1);
+		}
+};
