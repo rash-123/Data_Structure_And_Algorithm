@@ -1,0 +1,13 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-recursion/sum-of-first-n-numbers
+
+class Solution{	
+	public:
+    //TC - O(N)
+    //SC - O(N)
+		int NnumbersSum(int N){
+			if(N == 0){
+                return 0;
+            }
+            return N + NnumbersSum(N-1);
+		}
+};
