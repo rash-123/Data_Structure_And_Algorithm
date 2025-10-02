@@ -1,0 +1,16 @@
+https://takeuforward.org/plus/dsa/beginner-problem/basic-strings/palindrome-check
+
+class Solution{	
+	public:		
+    //TC - O(N)
+    //SC - O(1)
+		bool palindromeCheck(string& s){
+			int n = s.size();
+			for(int i = 0; i <= n/2; i++){
+				if(s[i] != s[n-1-i]){
+					return false;
+				}
+			}
+			return true;
+		}
+};
